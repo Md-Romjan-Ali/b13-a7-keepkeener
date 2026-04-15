@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { FriendsContext } from '../context/FriendContext';
 import { NavLink } from 'react-router';
+import { BarLoader } from 'react-spinners';
 
 const Friends = () => {
-    const {friends}=useContext(FriendsContext)
+    const {friends,loading}=useContext(FriendsContext)
 console.log(friends);
 
     return (
@@ -13,6 +14,9 @@ console.log(friends);
             <h1 className='text-[#1F2937] font-semibold text-2xl mt-10 mb-4'>Your Friends</h1>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                  {
+loading ? 
+<div className='my-[30%] col-span-full flex justify-center'><BarLoader color='red'/></div> 
+:
             friends.map(friend=>
             <NavLink key={friend.id} to={`/${friend.id}`}>
                 <div className='text-center py-6 bg-white shadow-xl rounded-xl'>

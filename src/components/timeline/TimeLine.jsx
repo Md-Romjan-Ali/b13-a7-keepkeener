@@ -1,9 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FriendsContext } from '../context/FriendContext';
 
 const TimeLine = () => {
     const {timeline}=useContext(FriendsContext)
-    console.log(timeline,'time line');
+    const [sort,setSort]=useState(timeline)
+  const textHandle=()=>{
+const sortedTimeline = [...timeline].sort((a, b) => {
+  const aText = a.textText || a.callText || a.vidioText;
+  const bText = b.textText || b.callText || b.vidioText;
+setSort(sortedTimeline)
+  return aText.localeCompare(bText);
+  
+});
+
+  }
+  const callHandle=()=>{
+console.log('call');
+  }
+  const videoHandle=()=>{
+console.log('video');
+  }
+
     return (
         <div className='bg-[#F8FAFC]'>
            <div className='max-w-300 mx-auto py-20'>
@@ -11,14 +28,14 @@ const TimeLine = () => {
          <div className="dropdown dropdown-bottom dropdown-center my-6">
   <div tabIndex={0} role="button" className="btn m-1 text-[18px] text-[#64748B]">Filter timeline ⬇️</div>
   <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-30 p-2 shadow-sm">
-    <li><a>Text</a></li>
-    <li><a>Call</a></li>
-    <li><a>Vidio</a></li>
+    <li onClick={()=>textHandle('Text')}><a>Text</a></li>
+    <li onClick={()=>callHandle('Text')}><a>Call</a></li>
+    <li onClick={()=>videoHandle('Text')}><a>Video</a></li>
   </ul>
 </div>
 <div className='space-y-6'>
     {
-        timeline.map((time,index)=><div key={index} className='bg-white rounded-md p-4 shadow-xl'>
+        sort.map((time,index)=><div key={index} className='bg-white rounded-md p-4 shadow-xl'>
             <div className='flex items-center gap-4'>
 <img src={time.name===time.textName ? `${time.textImg}` :
 time.name===time.callName ? `${time.callImg}`:

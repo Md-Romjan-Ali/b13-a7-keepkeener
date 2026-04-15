@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaPlus } from 'react-icons/fa';
 
 const Baner = () => {
     return (
@@ -9,7 +10,7 @@ const Baner = () => {
 relationships that matter most.</p>
 <div className='flex justify-center pb-10'>
     <button className='flex items-center font-semibold text-[16px] text-white btn bg-[#244D3F]'>
-    Add a Friend
+   <FaPlus /> Add a Friend
 </button>
 </div>
        </div>

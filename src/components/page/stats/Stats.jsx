@@ -17,10 +17,13 @@ const Stats = () => {
   ];
 const COLORS = ['#3B82F6', '#22C55E', '#EF4444'];
   return (
-    <div className='flex justify-center bg-[#F8FAFC]'>
-
-       <div className='max-w-300 mx-auto'>
-          <PieChart width={400} height={400}>
+    <div className=' bg-[#F8FAFC] py-20'>
+<div className='max-w-300 mx-auto'>
+    <h1 className='text-[#1F2937] font-bold text-5xl mb-6'>Friendship Analytics</h1>
+       <div className=' bg-white shadow-md rounded-xl'>
+        <p className='text-[#244D3F] font-medium text-xl pt-8 px-8'>By Interaction Type</p>
+        <div className='flex justify-center p-8'>
+            <PieChart width={400} height={400}>
             
       <Pie
         data={data}
@@ -33,9 +36,12 @@ const COLORS = ['#3B82F6', '#22C55E', '#EF4444'];
        ))}
        </Pie>
       <Tooltip />
-      <Legend/>
+      <Legend />
     </PieChart>
+        </div>
+          
        </div>
+</div>
     </div>
    
   );
