@@ -3,6 +3,7 @@ import { FriendsContext } from '../context/FriendContext';
 
 const TimeLine = () => {
     const {timeline}=useContext(FriendsContext)
+    console.log(timeline,'time line');
     return (
         <div className='bg-[#F8FAFC]'>
            <div className='max-w-300 mx-auto py-20'>

@@ -19,11 +19,11 @@ console.log(friends);
                 <img className='mx-auto h-20 w-20 rounded-full' src={friend.picture} alt="" />
                 <h1 className='text-xl font-semibold text-[#1F2937] mt-3'>{friend.name}</h1>
                 <p className='text-[#64748B] text-[16px] my-2'>{friend.days_since_contact}d ago</p>
-                <h1 className='   font-medium my-2 text-[16px]   flex items-center gap-2 justify-center'>
+                <div className='font-medium my-2 text-[16px]   flex items-center gap-2 justify-center'>
                     {friend.tags.map((tag,index)=><h1 key={index} className='w-30 px-4 py-2 bg-[#CBFADB] rounded-full'>
                         {tag}
                     </h1>)}
-                </h1>
+                </div>
 <h1 className={`text-white font-medium text-[16px] ${friend.status==='overdue' ? 'bg-[#EF4444]': 'bg-[#244D3F]'} ${friend.status==='Almost due' && 'bg-[#EFAD44]'} rounded-full w-30 py-2 flex justify-center mx-auto`}>{friend.status}</h1>
             </div>
             </NavLink>)

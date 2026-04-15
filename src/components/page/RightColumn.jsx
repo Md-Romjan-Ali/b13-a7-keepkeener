@@ -3,6 +3,7 @@ import { LuPhoneCall } from 'react-icons/lu';
 import { MdOutlineTextsms } from 'react-icons/md';
 import { RiVidiconLine } from 'react-icons/ri';
 import { FriendsContext } from '../context/FriendContext';
+import { toast } from 'react-toastify';
 
 const RightColumn = ({friendDetails}) => {
 const {timeline,setTimeline}=useContext(FriendsContext)
@@ -31,13 +32,19 @@ const {timeline,setTimeline}=useContext(FriendsContext)
   
    const callHandle=()=>{
     setTimeline([...timeline,call])
-    
+    toast.success(`Meetup With ${friendDetails.name}`,
+        {position:'top-center'}
+    )
    }
    const textHandle=()=>{
     setTimeline([...timeline,text])
+     toast.success(`Text With ${friendDetails.name}`,
+        {position:'top-center'})
    }
    const vidioHandle=()=>{
     setTimeline([...timeline,vidio])
+     toast.success(`Video With ${friendDetails.name}`,
+        {position:'top-center'})
    }
    console.log(timeline,'timeline');
     return (
@@ -91,17 +98,3 @@ const {timeline,setTimeline}=useContext(FriendsContext)
 };
 
 export default RightColumn;
-// {
-//     "id": 7,
-//     "name": "Daniel Anderson",
-//     "picture": "https://randomuser.me/api/portraits/men/7.jpg",
-//     "email": "daniel@example.com",
-//     "days_since_contact": 3,
-//     "status": "on_track",
-//     "tags": [
-//         "neighbor"
-//     ],
-//     "bio": "Lives next door.",
-//     "goal": 20,
-//     "next_due_date": "2025-08-05"
-// }
