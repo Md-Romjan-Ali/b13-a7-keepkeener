@@ -2,6 +2,7 @@ import React, {  createContext, useEffect, useState } from 'react';
     export const FriendsContext=createContext()
 const FriendContext = ({children}) => {
     const [friends,setFriends]=useState([])
+        const [timeline,setTimeline]=useState([])
     const [loading,setLoading]=useState(true)
 useEffect(()=>{
    const friendsData= async()=>{
@@ -17,7 +18,9 @@ const data={
     friends,
     setFriends,
     loading,
-    setLoading
+    setLoading,
+    timeline,
+    setTimeline,
 }
     return (
      <FriendsContext.Provider value={data}>

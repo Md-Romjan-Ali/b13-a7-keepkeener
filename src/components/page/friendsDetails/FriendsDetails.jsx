@@ -16,9 +16,14 @@ const FriendsDetails = () => {
               {
 loading ? <div className='flex justify-center my-[30%]'><RotateLoader color='red'/></div>
  :
-           <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-6'>
-             <LeftColumn friendDetails={friendDetails}></LeftColumn>
-             <RightColumn></RightColumn>
+           <div className='grid grid-cols-1 md:grid-cols-3 items-center gap-6'>
+            <div className='col-span-1'>
+                   <LeftColumn friendDetails={friendDetails}></LeftColumn>
+            </div>
+          <div className='md:col-span-2'>
+             <RightColumn friendDetails={friendDetails}></RightColumn>
+          </div>
+            
 
            </div>       
            
