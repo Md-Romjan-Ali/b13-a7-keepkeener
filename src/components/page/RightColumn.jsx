@@ -9,20 +9,35 @@ const {timeline,setTimeline}=useContext(FriendsContext)
 
    const call={
     callText:'Meetup',
+    callImg:'https://i.ibb.co.com/tfLvgy1/call.png',
+    name:friendDetails.name,
     callName:friendDetails.name,
     callDate:new Date().toLocaleDateString()
    }
    const text={
     textText:'Text',
+     textImg:'https://i.ibb.co.com/yBSmPdmT/text.png',
+    name:friendDetails.name,
     textName:friendDetails.name,
     textDate:new Date().toLocaleDateString()
+   }
+   const vidio={
+    vidioText:'Vidio',
+     vidioImg:'https://i.ibb.co.com/C36C1yHj/video.png',
+    name:friendDetails.name,
+    vidioName:friendDetails.name,
+    vidioDate:new Date().toLocaleDateString()
    }
   
    const callHandle=()=>{
     setTimeline([...timeline,call])
+    
    }
    const textHandle=()=>{
     setTimeline([...timeline,text])
+   }
+   const vidioHandle=()=>{
+    setTimeline([...timeline,vidio])
    }
    console.log(timeline,'timeline');
     return (
@@ -65,7 +80,7 @@ const {timeline,setTimeline}=useContext(FriendsContext)
 <p className='text-[#1F2937] text-[18px]'>Text</p>
 </div>
 {/* vidio */}
-<div className='text-center bg-[#E9E9E9] py-4 rounded-md shadow-md'>
+<div onClick={vidioHandle} className='text-center bg-[#E9E9E9] py-4 rounded-md shadow-md'>
 <RiVidiconLine size={25} className='mx-auto mb-2'/>
 <p className='text-[#1F2937] text-[18px]'>Vidio</p>
 </div>
