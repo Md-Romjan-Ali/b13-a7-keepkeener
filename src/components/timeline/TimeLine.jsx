@@ -5,20 +5,16 @@ const TimeLine = () => {
     const {timeline}=useContext(FriendsContext)
     const [sort,setSort]=useState(timeline)
   const textHandle=()=>{
-const sortedTimeline = [...timeline].sort((a, b) => {
-  const aText = a.textText || a.callText || a.vidioText;
-  const bText = b.textText || b.callText || b.vidioText;
-setSort(sortedTimeline)
-  return aText.localeCompare(bText);
-  
-});
-
+const textFilter=timeline.filter(sort=>sort.textText==='Text')
+setSort(textFilter)
   }
   const callHandle=()=>{
-console.log('call');
+const callFilter=timeline.filter(sort=>sort.callText==='Meetup')
+setSort(callFilter)
   }
   const videoHandle=()=>{
-console.log('video');
+const videoFilter=timeline.filter(sort=>sort.videoText==='Video')
+setSort(videoFilter)
   }
 
     return (
@@ -28,9 +24,9 @@ console.log('video');
          <div className="dropdown dropdown-bottom dropdown-center my-6">
   <div tabIndex={0} role="button" className="btn m-1 text-[18px] text-[#64748B]">Filter timeline ⬇️</div>
   <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-30 p-2 shadow-sm">
-    <li onClick={()=>textHandle('Text')}><a>Text</a></li>
-    <li onClick={()=>callHandle('Text')}><a>Call</a></li>
-    <li onClick={()=>videoHandle('Text')}><a>Video</a></li>
+    <li onClick={textHandle}><a>Text</a></li>
+    <li onClick={callHandle}><a>Call</a></li>
+    <li onClick={videoHandle}><a>Video</a></li>
   </ul>
 </div>
 <div className='space-y-6'>

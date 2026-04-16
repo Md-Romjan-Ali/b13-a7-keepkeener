@@ -3,7 +3,8 @@ import { useParams } from 'react-router';
 import { FriendsContext } from '../../context/FriendContext';
 import { RotateLoader } from 'react-spinners';
 import LeftColumn from './LeftColumn';
-import RightColumn from '../RightColumn';
+import RightColumn from './RightColumn';
+
 
 const FriendsDetails = () => {
     const {id}=useParams()

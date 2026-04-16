@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { LuPhoneCall } from 'react-icons/lu';
 import { MdOutlineTextsms } from 'react-icons/md';
 import { RiVidiconLine } from 'react-icons/ri';
-import { FriendsContext } from '../context/FriendContext';
+
 import { toast } from 'react-toastify';
+import { FriendsContext } from '../../context/FriendContext';
 
 const RightColumn = ({friendDetails}) => {
 const {timeline,setTimeline}=useContext(FriendsContext)
@@ -22,8 +23,8 @@ const {timeline,setTimeline}=useContext(FriendsContext)
     textName:friendDetails.name,
     textDate:new Date().toLocaleDateString()
    }
-   const vidio={
-    vidioText:'Vidio',
+   const video={
+    vidioText:'Video',
      vidioImg:'https://i.ibb.co.com/C36C1yHj/video.png',
     name:friendDetails.name,
     vidioName:friendDetails.name,
@@ -41,8 +42,8 @@ const {timeline,setTimeline}=useContext(FriendsContext)
      toast.success(`Text With ${friendDetails.name}`,
         {position:'top-center'})
    }
-   const vidioHandle=()=>{
-    setTimeline([...timeline,vidio])
+   const videoHandle=()=>{
+    setTimeline([...timeline,video])
      toast.success(`Video With ${friendDetails.name}`,
         {position:'top-center'})
    }
@@ -87,7 +88,7 @@ const {timeline,setTimeline}=useContext(FriendsContext)
 <p className='text-[#1F2937] text-[18px]'>Text</p>
 </div>
 {/* vidio */}
-<div onClick={vidioHandle} className='text-center bg-[#E9E9E9] py-4 rounded-md shadow-md'>
+<div onClick={videoHandle} className='text-center bg-[#E9E9E9] py-4 rounded-md shadow-md'>
 <RiVidiconLine size={25} className='mx-auto mb-2'/>
 <p className='text-[#1F2937] text-[18px]'>Vidio</p>
 </div>
