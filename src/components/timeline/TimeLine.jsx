@@ -33,25 +33,25 @@ setSort(videoFilter)
     {
         sort.map((time,index)=><div key={index} className='bg-white rounded-md p-4 shadow-xl'>
             <div className='flex items-center gap-4'>
-<img src={time.name===time.textName ? `${time.textImg}` :
+<img className='w-10' src={time.name===time.textName ? `${time.textImg}` :
 time.name===time.callName ? `${time.callImg}`:
-time.name===time.vidioName && `${time.vidioImg}`} alt="" />
+time.name===time.videoName && `${time.videoImg}`} alt="" />
               
             <div>
                 <div className='flex items-center gap-1'>
                     {/* text */}
               <span className='font-medium text-[#244D3F] text-xl'>{time.name===time.textName && `${time.textText}`}
                   {time.name===time.callName && `${time.callText}`}
-                  {time.name===time.vidioName && `${time.vidioText}`} </span>
+                  {time.name===time.videoName && `${time.videoText}`} </span>
 {/* name */}
                 <span className='text-[#64748B] text-[18px]'> With {time.name===time.textName && `${time.textName}`}
                   {time.name===time.callName && `${time.callName}`}
-                  {time.name===time.vidioName && `${time.vidioName}`}</span>
+                  {time.name===time.videoName && `${time.videoName}`}</span>
             </div>
 {/* date */}
                 <span className='text-[#64748B] text-[18px] mt-1'>{time.name===time.textName && `${time.textDate}`}
                   {time.name===time.callName && `${time.callDate}`}
-                  {time.name===time.vidioName && `${time.vidioDate}`}</span>
+                  {time.name===time.videoName && `${time.videoDate}`}</span>
             </div>
 
             </div>

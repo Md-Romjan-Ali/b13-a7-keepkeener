@@ -9,7 +9,7 @@ import { ToastContainer } from 'react-toastify'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <div className='geist'>
+  <div className='geist px-2'>
   <FriendContext>
      <RouterProvider router={router}>
 

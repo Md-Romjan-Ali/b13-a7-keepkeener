@@ -12,14 +12,14 @@ const Footer = () => {
     <h1 className='text-white text-xl font-medium mb-4'>Social Links</h1>
     {/* footer icon */}
     <div className='flex gap-3 justify-center flex-wrap items-center pb-10'>
-       <div className='bg-white w-20 h-20 rounded-full flex justify-center items-center'>
-<RiInstagramFill size={40}/>
+       <div className='bg-white w-18 h-18 rounded-full flex justify-center items-center'>
+<RiInstagramFill size={35}/>
 </div> 
-       <div className='bg-white w-20 h-20 rounded-full flex justify-center items-center'>
-<RiFacebookBoxFill size={40}/>
+       <div className='bg-white w-18 h-18 rounded-full flex justify-center items-center'>
+<RiFacebookBoxFill size={35}/>
 </div> 
-       <div className='bg-white w-20 h-20 rounded-full flex justify-center items-center'>
-<FaXTwitter size={40}/>
+       <div className='bg-white w-18 h-18 rounded-full flex justify-center items-center'>
+<FaXTwitter size={35}/>
 </div> 
     </div>
 <div className='border-t-2 border-gray-500 py-[30px] flex flex-wrap md:justify-between items-center gap-5 justify-center'>

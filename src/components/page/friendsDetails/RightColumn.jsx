@@ -24,11 +24,11 @@ const {timeline,setTimeline}=useContext(FriendsContext)
     textDate:new Date().toLocaleDateString()
    }
    const video={
-    vidioText:'Video',
-     vidioImg:'https://i.ibb.co.com/C36C1yHj/video.png',
+    videoText:'Video',
+     videoImg:'https://i.ibb.co.com/C36C1yHj/video.png',
     name:friendDetails.name,
-    vidioName:friendDetails.name,
-    vidioDate:new Date().toLocaleDateString()
+    videoName:friendDetails.name,
+    videoDate:new Date().toLocaleDateString()
    }
   
    const callHandle=()=>{
@@ -47,7 +47,7 @@ const {timeline,setTimeline}=useContext(FriendsContext)
      toast.success(`Video With ${friendDetails.name}`,
         {position:'top-center'})
    }
-   console.log(timeline,'timeline');
+  
     return (
         <div className='space-y-8'>
            <div className='grid grid-cols-1 sm:grid-cols-3 gap-6'>

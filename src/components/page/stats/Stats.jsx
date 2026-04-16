@@ -8,7 +8,7 @@ const Stats = () => {
     console.log(timeline);
     const text=timeline.filter(time=>time.textText=='Text')
     const call=timeline.filter(time=>time.callText=='Meetup')
-    const video=timeline.filter(time=>time.vidioText=='Vidio')
+    const video=timeline.filter(time=>time.videoText=='Video')
     console.log(text,call,video);
   const data = [
     { name: 'Text', uv: text.length },
